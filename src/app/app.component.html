@@ -1,21 +1,7 @@
-<h1> Demonstration of Built-In directives and data-Binding</h1>
-<h2>Product List</h2>
-
-<table >
-  <thead>
-    <th>Product Name</th>
-    <th>Quantity</th>
-  </thead>
-  <tr *ngFor= 'let p of products '>
-    <td>{{p.name}}</td>
-    <td>{{p.quantity}}</td>
-  </tr>
-</table>
-
-  <p>Enter Product Name: 
-    <input #newName type="text"   >
-    Enter Quantity:
-    <input #newQuantity type="number" name='pQuantity' >
-    <button (click)="addProduct(newName.value, newQuantity.value);  newName.value=''; newQuantity.value=''" >Add product </button>
-  </p>
+<h1> Demonstration of passing data between components, styles demo</h1>
+<div *ngIf = "flag">
+<h3> Recently Added Product : {{proName}}, {{proQuantity}}</h3>
+</div>
+<hr>
+<app-products [compName] = "companyName" (getProductDetails)="printDetails($event)" ></app-products>
 

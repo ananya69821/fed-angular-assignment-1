@@ -1,0 +1,21 @@
+
+<h2>Product List - {{compName}} </h2>
+
+
+<table >
+  <thead>
+    <th>Product Name</th>
+    <th>Quantity</th>
+  </thead>
+  <tr *ngFor= 'let p of products '>
+    <td>{{p.name}}</td>
+    <td>{{p.quantity}}</td>
+  </tr>
+</table>
+
+  <p>Enter Product Name: 
+    <input #newName type="text"   >
+    Enter Quantity:
+    <input #newQuantity type="number" name='pQuantity' >
+    <button (click)="addProduct(newName.value, newQuantity.value);  newName.value=''; newQuantity.value=''" >Add product </button>
+  </p>
